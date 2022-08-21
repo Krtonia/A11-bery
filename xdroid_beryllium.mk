@@ -6,11 +6,19 @@
 
 $(call inherit-product, device/xiaomi/beryllium/device.mk)
 
-# Inherit some common Havoc stuff.
-$(call inherit-product, vendor/havoc/config/common_full_phone.mk)
+# Inherit some common xdroid-CAF stuff
+$(call inherit-product, vendor/xdroid/config/common.mk)
+TARGET_BOOT_ANIMATION_RES := 1080
+XDROID_BOOT_DARK := true
+XDROID_UI_BLUR := true
+
+# GApps
+TARGET_INCLUDE_STOCK_ARCORE := true
+TARGET_INCLUDE_GOOGLE_RECORDER := true
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := havoc_beryllium
+PRODUCT_NAME := xdroid_beryllium
+PRODUCT_PLATFORM := SDM845
 PRODUCT_DEVICE := beryllium
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := POCO F1
